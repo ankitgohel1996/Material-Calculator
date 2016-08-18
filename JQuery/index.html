@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="default.js"></script>
+<style>
+
+	html,body
+	{
+	    padding: 0px;
+	    margin: 0;
+	    width:100%;
+	    height:100%;
+	    background-color: #eee;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 300;
+	}
+
+	.container
+	{
+		width:480px;
+		height:630px;
+		margin:0 auto;
+		top:40px;
+		position: relative;
+	}
+
+	.result
+	{
+		float:top;
+		width:100%;
+		background-color: white;
+		height:200px;
+		font-size:60px;
+		text-align: right;
+		box-sizing: border-box;
+		padding: 20px;
+		
+	}
+
+	.resultTop
+	{
+		float:top;
+		width:100%;
+		height:100px;
+		color:#636363;
+	}
+
+	.resultBottom
+	{
+		float:top;
+		width:100%;
+		height:100px;
+		color:#838383;
+		font-size:40px;
+	}
+	.numbers
+	{
+		float:left;
+		background-color: #434343;
+	}
+
+	.row
+	{
+		width:372px;
+		height:100px;
+	}
+
+	.column
+	{
+		height:400px;
+		width:18px;
+		background-color: #1DE9B6;
+		float:left;
+	}
+
+	.operators
+	{
+		float:left;
+		background-color: #636363;
+		height: 400px;
+		width:90px;
+	}
+
+	.button,.button1
+	{
+		float:left;
+		width:124px;
+		height:100%;
+		background-color: #434343;
+		color:white;
+		font-size:30px;
+		text-align: center;
+		box-sizing: border-box;
+		padding-top: 35px;
+		cursor: pointer;
+	}
+
+	.operator
+	{
+		float:top;
+		width:100%;
+		height:80px;
+		text-align: center;
+		color:white;
+		font-size:20px;
+		background-color: #636363;
+		padding-top: 25px;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+
+
+</style>
+</head>
+
+<body>
+
+</body>
+	<div class="container">
+		<div class="result">
+			<div class="resultTop"> </div>
+			<div class="resultBottom"> </div>
+		</div>
+
+		<div class="numbers">
+			<div class="row" id="firstrow">
+				<div class="button" id="7" data-val="7">7</div>
+				<div class="button" id="8" data-val="8">8</div>
+				<div class="button" id="9" data-val="9">9</div>
+			</div>
+
+			<div class="row" id="secondrow">
+				<div class="button" id="4" data-val="4">4</div>
+				<div class="button" id="5" data-val="5">5</div>
+				<div class="button" id="6" data-val="6">6</div>
+			</div>
+
+			<div class="row" id="thirdrow">
+				<div class="button" id="1" data-val="1">1</div>
+				<div class="button" id="2" data-val="2">2</div>
+				<div class="button" id="3" data-val="3">3</div>
+			</div>
+
+			<div class="row" id="fourthrow">
+				<div class="button" id="decimal" data-val=".">.</div>
+				<div class="button" id="0" data-val="0">0</div>
+				<div class="button1" id="equalto">=</div>
+			</div>
+		</div>
+
+		<div class="operators">
+			<div class="operator" id="delete">DEL</div>
+			<div class="operator" id="divide" data-val="/">/</div>
+			<div class="operator" id="multiply" data-val="x">x</div>
+			<div class="operator" id="minus" data-val="-">-</div>
+			<div class="operator" id="add" data-val="+">+</div>
+		</div>
+
+		<div class="column">
+		</div>
+
+	</div>
+
+</html>

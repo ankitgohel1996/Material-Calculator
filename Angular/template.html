@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+<style>
+
+	html,body
+	{
+	    padding: 0px;
+	    margin: 0;
+	    width:100%;
+	    height:100%;
+	    background-color: #eee;
+	    font-family: 'Roboto', sans-serif;
+	    font-weight: 300;
+	}
+
+	.container
+	{
+		width:480px;
+		height:630px;
+		margin:0 auto;
+		top:40px;
+		position: relative;
+	}
+
+	.result
+	{
+		float:top;
+		width:100%;
+		background-color: white;
+		height:200px;
+		font-size:60px;
+		text-align: right;
+		box-sizing: border-box;
+		padding: 20px;
+		
+	}
+
+	.resultTop
+	{
+		float:top;
+		width:100%;
+		height:100px;
+		color:#636363;
+	}
+
+	.resultBottom
+	{
+		float:top;
+		width:100%;
+		height:100px;
+		color:#838383;
+		font-size:40px;
+	}
+	.numbers
+	{
+		float:left;
+		background-color: #434343;
+	}
+
+	.row
+	{
+		width:372px;
+		height:100px;
+	}
+
+	.column
+	{
+		height:400px;
+		width:18px;
+		background-color: #1DE9B6;
+		float:left;
+	}
+
+	.operators
+	{
+		float:left;
+		background-color: #636363;
+		height: 400px;
+		width:90px;
+	}
+
+	.button,.button1
+	{
+		float:left;
+		width:124px;
+		height:100%;
+		background-color: #434343;
+		color:white;
+		font-size:30px;
+		text-align: center;
+		box-sizing: border-box;
+		padding-top: 35px;
+		cursor: pointer;
+	}
+
+	.operator
+	{
+		float:top;
+		width:100%;
+		height:80px;
+		text-align: center;
+		color:white;
+		font-size:20px;
+		background-color: #636363;
+		padding-top: 25px;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+
+
+</style>
+</head>
+
+<body>
+
+</body>
+	<div class="container">
+		<div class="result">
+			<div class="resultTop"> {{expression}} </div>
+			<div class="resultBottom"> {{answer}}</div>
+		</div>
+
+		<div class="numbers">
+			<div class="row" id="firstrow">
+				<div class="button" ng-click='selected(7)'>7</div>
+				<div class="button" ng-click='selected(8)'>8</div>
+				<div class="button" ng-click='selected(9)'>9</div>
+			</div>
+
+			<div class="row" id="secondrow">
+				<div class="button" ng-click='selected(4)'>4</div>
+				<div class="button" ng-click='selected(5)'>5</div>
+				<div class="button" ng-click='selected(6)'>6</div>
+			</div>
+
+			<div class="row" id="thirdrow">
+				<div class="button" ng-click='selected(1)'>1</div>
+				<div class="button" ng-click='selected(2)'>2</div>
+				<div class="button" ng-click='selected(3)'>3</div>
+			</div>
+
+			<div class="row" id="fourthrow">
+				<div class="button" ng-click='selected(".")'>.</div>
+				<div class="button" ng-click='selected(0)'>0</div>
+				<div class="button1" id="equalto" ng-click='display()'>=</div>
+			</div>
+		</div>
+
+		<div class="operators">
+			<div class="operator" ng-click='delete()'>DEL</div>
+			<div class="operator" ng-click='selected("/")'>/</div>
+			<div class="operator" ng-click='selected("x")'>x</div>
+			<div class="operator" ng-click='selected("-")'>-</div>
+			<div class="operator" ng-click='selected("+")'>+</div>
+		</div>
+
+		<div class="column">
+		</div>
+
+	</div>
+
+</html>
