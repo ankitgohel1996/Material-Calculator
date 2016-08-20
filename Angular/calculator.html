@@ -27,100 +27,96 @@
 		var clear;
 
 		$scope.selected=function(args)
-						{
-							$scope.expression=$scope.expression.concat(args);
+		{
+			$scope.expression=$scope.expression.concat(args);
 
-							var lastChar=$scope.expression.charAt($scope.expression.length-1);
+			var lastChar=$scope.expression.charAt($scope.expression.length-1);
 
-					  	   if(lastChar!='+'&&lastChar!='-'&&lastChar!='x'&&lastChar!='/')
-					  	   {
-					  	   		calculate();
-					  	   }
-						}
+	  	   if(lastChar!='+'&&lastChar!='-'&&lastChar!='x'&&lastChar!='/')
+	  	   {
+	  	   		calculate();
+	  	   }
+		}
 
 		$scope.display=function()
-					   {
-						   $scope.expression=$scope.answer;
-						   $scope.answer="";
-						   clear=1;
-					   }
+	    {
+		   $scope.expression=$scope.answer;
+		   $scope.answer="";
+		   clear=1;
+	    }
 
 		$scope.delete=function()
-					  {
-					  	if(clear!=1)
-					  	{
-					  	   $scope.expression=$scope.expression.substring(0,$scope.expression.length-1);
-					  	   var lastChar=$scope.expression.charAt($scope.expression.length-1);
+		  {
+		  	if(clear!=1)
+		  	{
+		  	   $scope.expression=$scope.expression.substring(0,$scope.expression.length-1);
+		  	   var lastChar=$scope.expression.charAt($scope.expression.length-1);
 
-					  	   if(lastChar=='+'||lastChar=='-'||lastChar=='x'||lastChar=='/')
-					  	   {
-					  	   		$scope.answer="";
-					  	   }
-					  	   else
-					  	   {
-					  	   		calculate();
-					  	   }
-					  	}
-					  	else if(clear == 1)
-					  	{
-					  		$scope.answer="";
-					  		$scope.expression="";
-					  		clear=0; 
-					 	}
-					 }
+		  	   if(lastChar=='+'||lastChar=='-'||lastChar=='x'||lastChar=='/')
+		  	   {
+		  	   		$scope.answer="";
+		  	   }
+		  	   else
+		  	   {
+		  	   		calculate();
+		  	   }
+		  	}
+		  	else if(clear == 1)
+		  	{
+		  		$scope.answer="";
+		  		$scope.expression="";
+		  		clear=0; 
+		 	}
+		 }
 	
 		var calculate=function()
-					  {
-					 	for(var i=0;i<$scope.expression.length;i++)
-					 	{
-						 	if($scope.expression.charAt(i)=='+') 
-							 	add();
-						 	else if($scope.expression.charAt(i)=='-')
-						 	 	subtract();
-						 	else if ($scope.expression.charAt(i)=="x")
-						 		multiply();
-						 	else if($scope.expression.charAt(i)=="/")
-						 		divide();
-						}
-					   }
+		  {
+		 	for(var i=0;i<$scope.expression.length;i++)
+		 	{
+			 	if($scope.expression.charAt(i)=='+') 
+				 	add();
+			 	else if($scope.expression.charAt(i)=='-')
+			 	 	subtract();
+			 	else if ($scope.expression.charAt(i)=="x")
+			 		multiply();
+			 	else if($scope.expression.charAt(i)=="/")
+			 		divide();
+			}
+		   }
  
 		var add =function()
-				 {
-					 var res=$scope.expression.split('+');
-					 $scope.answer=0;
-					 for(var i=0;i<res.length;i++)
-					 {
-					     $scope.answer=$scope.answer+Number(res[i]);
-					 }	
-				 }
-		var subtract=function()
-					 {
-					 	var res=$scope.expression.split('-');
-					 	$scope.answer=res[0];
+		 {
+			 var res=$scope.expression.split('+');
+			 $scope.answer=0;
+			 for(var i=0;i<res.length;i++)
+			     $scope.answer=$scope.answer+Number(res[i]);	
+		 }
 
-					 	for(var i=1;i<res.length;i++)
-					 	{
-					 		$scope.answer=$scope.answer-Number(res[i]);
-					 	}
-					 }
+		var subtract=function()
+		{
+		 	var res=$scope.expression.split('-');
+		 	$scope.answer=res[0];
+
+		 	for(var i=1;i<res.length;i++)
+		 		$scope.answer=$scope.answer-Number(res[i]);
+		 }
 
 		var multiply=function()
-					 {
-				 		var res=$scope.expression.split('x');
-				 		$scope.answer=1;
+		 {
+	 		var res=$scope.expression.split('x');
+	 		$scope.answer=1;
 
-				 		for(var i=0;i<res.length;i++)
-				 		{
-				 			$scope.answer=$scope.answer*Number(res[i]);
-				 		}
-					 }
+	 		for(var i=0;i<res.length;i++)
+	 			$scope.answer=$scope.answer*Number(res[i]);
+
+		 }
 
 		var divide=function()
-				   {
-					   	var res=$scope.expression.split("/");
-					   	$scope.answer=Number(res[0])/Number(res[1]);
-					   	$scope.answer= +$scope.answer.toFixed(6);
-				   }
+		  {
+			   var res=$scope.expression.split("/");
+			   $scope.answer=Number(res[0])/Number(res[1]);
+			   $scope.answer= +$scope.answer.toFixed(6);
+		  }
 
 	});
 
